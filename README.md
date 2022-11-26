@@ -1,4 +1,14 @@
-# test-react-currency
+# Test React Currency
+
+## Commands
+
+```bash
+# Install deps
+yarn
+
+# Run development server, starting on http://localhost:3000
+yarn dev
+```
 
 ## Instructions
 
