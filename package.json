@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.(ts|tsx|js)\"",
+    "format:check": "prettier --check \"**/*.(ts|tsx|js)\""
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -18,5 +20,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "prettier": "2.8.0"
   }
 }

@@ -10,6 +10,15 @@ yarn
 yarn dev
 ```
 
+### Prettier
+```bash
+# Check for errors
+yarn format:check
+
+# Fix the errors
+yarn format
+```
+
 ## Instructions
 
 ```
