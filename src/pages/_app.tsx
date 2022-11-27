@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import React, { FC } from 'react';
+import React from 'react';
 
 import theme from '@/styles/theme';
 import createEmotionCache from '@/utils/createEmotionCache';
@@ -19,7 +19,7 @@ const clientSideEmotionCache = createEmotionCache();
  * Copy from here
  * https://github.com/mui/material-ui/blob/master/examples/nextjs-with-typescript/pages/_app.tsx
  */
-const NextApp: FC<MyAppProps> = (props: MyAppProps) => {
+const NextApp = (props: MyAppProps): JSX.Element => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (

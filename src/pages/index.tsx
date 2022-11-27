@@ -1,9 +1,11 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import React, { FC } from 'react';
+import React from 'react';
 
-const Home: FC = () => {
+import CurrencyConverter from '@/components/CurrencyConverter';
+
+const Home = (): JSX.Element => {
   return (
     <Container maxWidth="lg">
       <Box
@@ -15,9 +17,11 @@ const Home: FC = () => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Test React Currency
+        <Typography variant="h4" component="h1" sx={{ mb: 6 }}>
+          React Currency Converter
         </Typography>
+
+        <CurrencyConverter />
       </Box>
     </Container>
   );
