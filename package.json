@@ -3,14 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "check:all": "yarn lint && yarn format:check && yarn build",
+    "dev": "next dev",
     "format": "prettier --write \"**/*.(ts|tsx|js)\"",
-    "format:check": "prettier --check \"**/*.(ts|tsx|js)\""
+    "format:check": "prettier --check \"**/*.(ts|tsx|js)\"",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
+    "@emotion/cache": "11.10.5",
+    "@emotion/react": "11.10.5",
+    "@emotion/server": "11.10.0",
+    "@emotion/styled": "11.10.5",
+    "@mui/material": "5.10.15",
+    "@next/font": "13.0.5",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
