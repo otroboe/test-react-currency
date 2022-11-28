@@ -13,6 +13,7 @@ type SelectProps = {
   choices: SelectChoice[];
   defaultValue?: string;
   id: string;
+  onChange?: (value: string) => void;
   label?: string;
 };
 
@@ -20,12 +21,16 @@ const Select = ({
   choices,
   defaultValue,
   id,
+  onChange = () => {},
   label,
 }: SelectProps): JSX.Element => {
   const [value, setValue] = useState(defaultValue);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setValue(event.target.value as string);
+    const newValue = event.target.value;
+
+    onChange(newValue);
+    setValue(newValue);
   };
 
   return (
@@ -36,6 +41,11 @@ const Select = ({
         labelId={id}
         onChange={handleChange}
         value={value}
+        MenuProps={{
+          style: {
+            maxHeight: 400,
+          },
+        }}
       >
         {choices.map((choice, idx) => (
           <MenuItem key={`${id}-${idx}`} value={choice.value}>

@@ -28,5 +28,37 @@ const computeCurrencyList = (data: Record<string, any>): Currency[] =>
 // Compute once
 const currencyList = computeCurrencyList(rawData);
 
+/**
+ * Convert CAD to selected currency
+ */
+const convertCadToCurrency = (
+  cad: number,
+  currencyCode: string,
+): number | null => {
+  const foundCurrency = currencyList.find(({ code }) => code === currencyCode);
+
+  if (!foundCurrency) {
+    return null;
+  }
+
+  return parseFloat((cad * foundCurrency.rate).toFixed(3));
+};
+
+/**
+ * Convert CAD to selected currency
+ */
+const convertCurrencyToCad = (
+  currencyValue: number,
+  currencyCode: string,
+): number | null => {
+  const foundCurrency = currencyList.find(({ code }) => code === currencyCode);
+
+  if (!foundCurrency) {
+    return null;
+  }
+
+  return parseFloat((currencyValue * foundCurrency.inverseRate).toFixed(3));
+};
+
 export type { Currency };
-export { currencyList };
+export { currencyList, convertCadToCurrency, convertCurrencyToCad };
